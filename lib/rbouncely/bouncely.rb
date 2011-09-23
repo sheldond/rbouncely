@@ -15,15 +15,14 @@ module Rbouncely
     
     
     def get_bounces(date = "today")
-      @config[:date] = date
-      @config[:format] = DEFAULT_CONFIG[:format] # only support default format for now
+      @config[:format] = DEFAULT_CONFIG[:format] # only support default format xml for now
+      @config[:date] = parse_date(date)
       
-      query = @config[:url]
+      query = String.new(@config[:url])
       
       query.scan(/\{\w+\}/).each do |match|
         query.gsub!(match, @config[match[/\w+/].to_sym])
       end
-      
       begin
         xml = Hpricot(open(query))
       rescue => e
@@ -43,5 +42,24 @@ module Rbouncely
       bounces
     end
   
+  
+    private
+    
+    def parse_date(date)
+      
+      unless date.class == Date || date.class == Time
+        case date.to_s.downcase
+        when "today"
+          date = Date.today
+        when "yesterday"
+          date = Date.yesterday
+        else
+          date = Date.parse(date)
+        end
+      end
+      
+      "#{date.year}-#{date.month}-#{date.day}"
+    end
+    
   end
 end

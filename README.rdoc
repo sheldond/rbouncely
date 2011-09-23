@@ -1,3 +1,7 @@
 = Rbouncely
 
-This project rocks and uses MIT-LICENSE.
+A very simple Rails plugin for accessing the Bouncely API.
+
+Bouncely tracks Amazon SES bounces.
+<http://bouncely.com>
+
