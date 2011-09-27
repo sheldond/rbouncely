@@ -2,18 +2,16 @@
 
 A very simple Rails plugin for accessing the Bouncely API.
 
-Bouncely tracks Amazon SES bounces.
-<http://bouncely.com>
+Bouncely tracks Amazon SES bounces http://bouncely.com
 
 
-Install:
+== Install
 
-copy rbouncely.rb.initializer_example to config/initializers/rbouncely.rb and edit it to contain your API key.
+Copy rbouncely.rb.initializer_example to config/initializers/rbouncely.rb ands edit it to contain your API key.
 
 
-Example:
+== Example
 
-bouncely = Rbouncely::Bouncely.new(Rbouncely::CONFIG)
-
-bounces = bouncely.get_bounces(Date.today)
+  bouncely = Rbouncely::Bouncely.new(Rbouncely::CONFIG)
+  bounces = bouncely.get_bounces(Date.today)
 
