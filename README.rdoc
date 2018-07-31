@@ -1,3 +1,5 @@
+⚠️ __The code in this repo is not maintained and contains known security vulnerabilities__ ⚠️
+
 = Rbouncely
 
 A very simple Rails plugin for accessing the Bouncely API.
