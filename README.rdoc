@@ -1,4 +1,4 @@
-⚠️ __The code in this repo is not maintained and contains known security vulnerabilities__ ⚠️
+=== ⚠️ The code in this repo is not maintained and contains known security vulnerabilities ⚠️
 
 = Rbouncely
 
